@@ -5,12 +5,17 @@
 }
 
 body{
-    height: 100vh;
+    background-image: url('images/background.jpg');
+}
+    
+
+
+.container{
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
-    background-image: url('images/background.jpg');
 }
 
 @media(max-width: 768px){
