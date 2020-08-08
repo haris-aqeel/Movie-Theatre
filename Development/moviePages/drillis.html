@@ -117,7 +117,8 @@
                 </div>
             </div>
 
-            <h1><span class="countSeats my-5">0</span> Seats are reserved out of 28 Seats.</h1>
+            <h1><span class="countSeats my-5"></span> Seats are reserved out of 28 Seats.</h1>
+            <button type="button" class="btn btn-secondary " onClick="reset()">Reset All Seats</button>
 
     </div>
     
@@ -134,16 +135,21 @@
         <script>
         
         
-        var link = document.querySelectorAll("a");
+        
+            // GLOBAL VARIABLES
             var b;
-            var count = 0;                  
+            var count = 0;
+            var link = document.querySelectorAll("a");
+
             function clickingLink(x){
+                
+                
                 if (document.getElementById(x).classList.contains('clicked-image')){
-                    document.getElementById(x).removeAttribute("data-toggle", "modal");
+                    //document.getElementById(x).removeAttribute("data-toggle", "modal");
                     document.getElementById(x).removeAttribute("data-target", "#exampleModal");
-                    alert("Seat Already Reserved");
+                    alert("Already Reserved");
                 }else{ 
-                  b = x;
+                  b = x
              } }
 
             function cancel(){
@@ -151,13 +157,25 @@
             }
 
             function countSeats(){
+                window.localStorage.setItem("newID", b);
+                newArray = [];
+                newArray.push(b);
+                localStorage.setItem('anArray', newArray);
+                
                 document.getElementById(b).className = 'clicked-image';
                 count = count + 1 ;
+                var mycount = parseInt(window.localStorage.getItem('counts'));
+                localStorage.setItem('counts', ++mycount);
                 reserved();
             }
 
             function reserved(){
-                document.querySelector(".countSeats").textContent = count;
+                document.querySelector(".countSeats").textContent = window.localStorage.getItem('counts');
+            }
+
+            function reset(){
+                localStorage.setItem('counts', 0);
+                reserved();
             }
 
             
