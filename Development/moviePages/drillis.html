@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drillis Ertugrul</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        :root {}
+
+        img {
+            cursor: pointer;
+            position: relative;
+        }
+
+        img:hover {
+            position: relative;
+            bottom: 7px;
+            right: 7px;
+            filter: invert(20%);
+        }
+
+        .clicked-image {
+            filter: invert(20%);
+        }
+
+        .unclicked-image {
+            filter: invert(0%);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand font-weight-bolder" href="#">MOVIES</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link font-weight-bold" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="#">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid bg-dark text-white my-3">
+        <h1 class="text-capitalize text-center font-weight-bold py-4">Drillis Ertugrul</h1>
+
+        <div class="container">
+            <p class="mb-3">This series is about the Turkish warrior Ertugrul from the 13th century, one of the most
+                famous warriors
+                of his time
+                and also the father of Osman (the founder of the Ottoman Empire). He is an ambitious man who wants to
+                bring peace and
+                justice to his people. He is in a war with the Crusaders on one side, the Byzantines on another side and
+                the brutally expanding Mongols who killed a lot of Turks on another side. In between this he is in a
+                psychologic
+                al war between his love and his so called destiny.</p>
+        </div>
+        <br /><br />
+
+    </div>
+
+    <div class="container text-center">
+
+            <a href=""><img src="images/movie-seat.png"></a><a href=""><img
+                    src="images/movie-seat.png"></a><a href=""><img src="images/movie-seat.png"></a>
+            <a href=""><img src="images/movie-seat.png"></a><a href=""><img src="images/movie-seat.png"></a><a href=""><img
+                    src="images/movie-seat.png"></a><a href="">
+                <a href=""><img src="images/movie-seat.png"></a><a href=""><img src="images/movie-seat.png"></a>
+                <a href=""><img src="images/movie-seat.png"></a><br />
+                <a href=""><img src="images/movie-seat.png"></a><a href=""><img
+                    src="images/movie-seat.png"></a><a href=""><img src="images/movie-seat.png"></a>
+            <a href=""><img src="images/movie-seat.png"></a><a href=""><img src="images/movie-seat.png"></a><a href=""><img
+                    src="images/movie-seat.png"></a><a href=""><img src="images/movie-seat.png"></a>
+                <a href=""><img src="images/movie-seat.png"></a><br />
+                <a href=""><img src="images/movie-seat.png"></a><a href=""><img
+                    src="images/movie-seat.png"></a><a href=""><img src="images/movie-seat.png"></a>
+            <a href=""><img src="images/movie-seat.png"></a><a href=""><img src="images/movie-seat.png"></a><a href=""><img
+                    src="images/movie-seat.png"></a>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-center" id="exampleModalLabel">Reserve Your Seat</h5>
+                            <button type="button" class="close" onClick="cancel()" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h3>Payment is at the time of Entrance</h3>
+                            Are You sure You Want to Reserve the Seat?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary no" data-dismiss="modal" onClick="cancel()">Cancel</button>
+                            <button type="button" class="btn btn-primary yes" onClick="countSeats()" data-dismiss="modal">Yes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h1><span class="countSeats my-5">0</span> Seats are reserved out of 28 Seats.</h1>
+
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+        <script>
+        
+        
+        var link = document.querySelectorAll("a");
+            var b;
+            var count = 0;                  
+            function clickingLink(x){
+
+                  b = x;
+                    }
+
+            function cancel(){
+                document.getElementById(b).classList.remove('clicked-image');
+            }
+
+            function countSeats(){
+                
+                document.getElementById(b).className = 'clicked-image';
+                count = count + 1 ;
+                reserved();
+            }
+
+            function reserved(){
+                document.querySelector(".countSeats").textContent = count;
+            }
+
+            
+
+            
+            for (let i = 5; i<29; i++){
+            link[i].setAttribute("data-toggle", "modal");
+            link[i].setAttribute("data-target", "#exampleModal");
+            link[i].setAttribute("id", i);
+            link[i].setAttribute("onclick", 'clickingLink("'+i+'")');
+        
+            }
+            
+
+        </script>
+
+</body>
+
+</html>
