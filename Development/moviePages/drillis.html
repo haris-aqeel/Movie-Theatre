@@ -138,16 +138,19 @@
             var b;
             var count = 0;                  
             function clickingLink(x){
-
+                if (document.getElementById(x).classList.contains('clicked-image')){
+                    document.getElementById(x).removeAttribute("data-toggle", "modal");
+                    document.getElementById(x).removeAttribute("data-target", "#exampleModal");
+                    alert("Seat Already Reserved");
+                }else{ 
                   b = x;
-                    }
+             } }
 
             function cancel(){
                 document.getElementById(b).classList.remove('clicked-image');
             }
 
             function countSeats(){
-                
                 document.getElementById(b).className = 'clicked-image';
                 count = count + 1 ;
                 reserved();
